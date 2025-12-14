@@ -187,3 +187,60 @@
  *                   type: string
  *                   example: "Your error message here"
  */
+
+
+/**
+ * @swagger
+ * /api/auth/profile:
+ *   get:
+ *     summary: Fetch user profile information
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Successfully retrieved user profile
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                       example: "60b8c678e1f0c20f446e3e6a"
+ *                     email:
+ *                       type: string
+ *                       example: user@example.com
+ *                     role:
+ *                       type: string
+ *                       example: donor
+ *                     status:
+ *                       type: string
+ *                       example: approved
+ *       404:
+ *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "User not found"
+ *       500:
+ *         description: Error fetching user profile
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Error fetching profile"
+ *                 error:
+ *                   type: string
+ *                   example: "Your error message here"
+ */
